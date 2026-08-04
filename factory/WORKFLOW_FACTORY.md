@@ -49,17 +49,59 @@ Ask ALL of these in ONE message, then proceed autonomously on the answers:
 
 Do not ask anything else. Defaults fill every gap.
 
-## PHASE 2 — STUDY THE EXAMPLES
+## PHASE 2 — STUDY THE EXAMPLES (local download + screenshots + transcription)
 
-If you have browser access, watch/scrub each example link and extract, in writing:
-- Scene grammar: average shot length, how scenes open (cold hook? title card?),
-  how they chain (hard cuts? motion transitions?), how they end (CTA style).
-- Visual vocabulary: palette, line/render style, camera behavior, text-on-screen
-  conventions, background treatment.
-- Audio: narration vs on-camera speech, pacing (words per second), music/SFX role.
-If you cannot watch them, say so in one line and derive the grammar from the style's
-well-known conventions instead. Either way, write a SCENE GRAMMAR summary — it drives
-Phase 4's script rules.
+Do NOT eyeball the videos in a browser. Analyze them PROPERLY on the local machine —
+assume capable hardware (a high-end GPU may be attached; on Apple Silicon use the
+MLX path). For EACH example link:
+
+1. DOWNLOAD (local file, ≤1080p is plenty):
+     yt-dlp -f "bv*[height<=1080]+ba/b[height<=1080]" -o "study/%(id)s.%(ext)s" <URL>
+   Install yt-dlp if missing (pipx/pip/brew). If a download fails (region lock,
+   removal), say so in one line and continue with the remaining examples.
+
+2. PROBE: ffprobe for duration, fps, resolution, aspect ratio.
+
+3. SHOT DETECTION — measure, don't guess:
+     ffmpeg -i in.mp4 -vf "select='gt(scene,0.3)',showinfo" -f null - 2>&1 | grep showinfo
+   The pts_time values are the CUT timestamps. Compute: total cuts, average and median
+   shot length, and the distribution (does it open with rapid cuts? long holds?).
+   If almost no cuts are detected, lower the threshold to 0.2 before concluding
+   "single continuous takes".
+
+4. SCREENSHOTS — you must actually LOOK at the video:
+   - One frame AT each detected cut (first frame of every shot):
+       ffmpeg -ss <t> -i in.mp4 -frames:v 1 shots/shot_%03d.jpg
+   - Plus a contact sheet for the gestalt: ffmpeg -i in.mp4 -vf "fps=1/5,scale=320:-1,tile=6x6" sheet_%02d.jpg
+   VIEW these images with your vision capability and write down: render/art style,
+   palette (sample dominant colors), framing conventions, text-on-screen style
+   (font weight, position, animation), background treatment, character presentation,
+   lighting. Cite specific shots ("shot_014: full-screen kinetic text on flat color").
+
+5. TRANSCRIBE THE AUDIO locally with word-level timestamps:
+     ffmpeg -i in.mp4 -ar 16000 -ac 1 audio.wav
+   - Apple Silicon: parakeet-mlx audio.wav --output-format srt   (fast, accurate)
+   - NVIDIA GPU: faster-whisper (model large-v3) or whisper.cpp with CUDA
+   - Fallback any machine: pip install faster-whisper, model small.en
+   From the timestamped transcript compute: words-per-second pacing (overall and for
+   the first 10 seconds separately), the exact HOOK line, sentence lengths, how the
+   CTA is phrased, and where speech pauses fall relative to cuts.
+
+6. SYNTHESIZE the SCENE GRAMMAR (written, with numbers):
+   - avg/median shot length; shots per 10s in the hook vs the body
+   - words/sec; average spoken-line length in characters (maps to the ≤100-char law)
+   - hook pattern, escalation pattern, CTA pattern (quote the transcript)
+   - visual vocabulary list from the screenshots (10-20 concrete terms usable in
+     image prompts: e.g. "flat 2D paper texture, hard drop shadows, mustard/teal
+     palette, centered single subject, hand-drawn wobble")
+   - what the style NEVER does (from Q7 plus your own observations)
+
+   COPYRIGHT LINE: you are extracting STYLE (pacing, structure, visual vocabulary),
+   never content. Do not reuse the example's script, story, or distinctive characters.
+   The scene grammar must describe HOW these videos work, not WHAT they say.
+
+Clean up the downloaded files at the end of the phase (keep the screenshots and
+transcripts in the working directory for Phase 4 reference).
 
 ## PHASE 3 — MAKE THE DESIGN DECISIONS (the adaptation matrix)
 

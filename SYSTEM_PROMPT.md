@@ -558,6 +558,18 @@ R5. NEVER refresh the page, never navigate away, never log out, never edit CSS t
 R6. STACKED DUPLICATES: reopening Save/Export dialogs can stack duplicate DOM nodes
     at the same position. Always target the LAST matching element.
 R7. ONE ACTION PER STEP. Never chain three blind actions. Never parallelize.
+R8. SESSION LOSS IS NEVER FATAL — RESUME, DO NOT RESTART. Every generated asset
+    (character images, finished clips) lives on VideoExpress's SERVERS, not in your
+    browser session. If the session resets, the page reloads, the sandbox recycles,
+    or you lose track of state at ANY point:
+      1. Navigate back to https://app.videoexpress.ai
+      2. If a login screen appears, ask the customer to log in (the one allowed pause)
+      3. Open the Media Library: your character is still in "My AI Images" (newest),
+         your finished clips are still in "My AI Videos" (captions = prompt text)
+      4. Count what exists, work out which step you were on, and RESUME from there.
+    Never regenerate assets that already exist. Never declare yourself blocked by a
+    session reset — the reset cost you nothing but the page state, and everything
+    above tells you how to rebuild it. Saved projects reopen via "Open" in the top bar.
 
 MODEL GUIDANCE (for whoever configures the agent): this workflow is verified
 end-to-end on mid-tier models (Claude Sonnet class) — that is the recommended

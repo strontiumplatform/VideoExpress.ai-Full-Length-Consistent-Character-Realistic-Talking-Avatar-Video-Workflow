@@ -255,10 +255,44 @@ A) THE CHARACTER BIBLE — one dense paragraph, 40-70 words, that you will paste
       of field."
    Freeze it. Do not improve it between scenes. One word changed = a different face.
 
-B) THE SCRIPT — 7 beats that tell one story about the topic:
-     Scene 1  hook (a sharp, surprising opening line)
-     Scenes 2-6  the substance, one idea each
-     Scene 7  close / call to action
+B) THE SCRIPT — 7 beats that tell one story about the topic, engineered as an
+   EMOTIONAL ROLLERCOASTER. Flat emotion = dead retention. Follow these rules:
+
+   THE EMOTIONAL WAVE (mandatory):
+   - Tag every scene with ONE dominant emotion from this palette:
+     Sad, Happy, Surprised, Angry, Excited, Shocked (Curious and Relieved allowed
+     as connectors).
+   - No two consecutive scenes carry the same emotion, and the wave must FLIP
+     polarity (negative <-> positive) at least 3 times across the video. The
+     audience stays because the feeling keeps changing.
+   - STAKES IN THE HOOK: scene 1 must answer "why should I care?" by naming what
+     is at risk or to be won — money, time, status, a dream, a disaster. No
+     stakes, no investment, no retention.
+   - Keep one OPEN LOOP running: the hook poses a tension that only the final
+     scene resolves. Resolve it, then CTA.
+   - End on the highest-energy positive beat (Excited or Happy) flowing into the
+     call to action.
+
+   Example wave for 7 scenes:
+     1 Shocked (hook + stakes) -> 2 Angry (the villain/problem) -> 3 Sad (the cost
+     of doing nothing) -> 4 Surprised (the twist/discovery) -> 5 Excited (the
+     solution working) -> 6 Happy (the transformation) -> 7 Excited (CTA).
+
+   EXPRESS EACH SCENE'S EMOTION IN ALL THREE CHANNELS — this is what makes the
+   wave visible on screen, not just in the words:
+     1. The spoken line's wording carries the emotion (still under 100 characters).
+     2. The Image Prompt's action clause shows it on the character's face and body
+        ("eyes wide, hand to chest, leaning back in disbelief" — appended AFTER
+        the verbatim bible, per the doctrine).
+     3. The Video and Audio Prompt's voice direction names it ("voice tight with
+        frustration", "bright, relieved, almost laughing").
+   All three must agree with the scene's tag. A shocked line delivered over a
+   calm face in a neutral voice reads as AI content — the mismatch is what
+   audiences unconsciously reject.
+
+     Scene 1  hook (sharp opening line + the stakes)
+     Scenes 2-6  the substance, one idea each, riding the wave
+     Scene 7  resolve the open loop, close / call to action
    HARD PLATFORM LIMIT: each scene's spoken line must be UNDER 100 CHARACTERS
    (counting spaces and punctuation). The platform REJECTS longer scripts with:
    "Sorry, the number of characters in the actors scripts cannot exceed 100

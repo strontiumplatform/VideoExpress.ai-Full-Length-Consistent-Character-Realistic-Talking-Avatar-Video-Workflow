@@ -1,11 +1,3 @@
-# VideoExpress.ai — One-Minute Consistent-Character Video
-
-**Copy everything in the box below and paste it into Claude Code (or any agent with browser control).**
-Then answer the two questions it asks. That's it — it does the rest on its own.
-
----
-
-```
 CANONICAL SOURCE — THIS WORKFLOW IS MAINTAINED ON GITHUB
 
 The always-current version of these instructions lives at:
@@ -598,9 +590,3 @@ to memory immediately and applied as the new default on every future run, silent
 without asking again. Preferences in memory outrank the defaults in this prompt,
 except for the safety ones: never share to the public gallery, never exceed 5 parallel
 generations, never exceed 10 seconds per clip, never enter the customer's password.
-```
-
----
-
-**What happens next:** the agent asks you two questions, then works for roughly
-15-40 minutes depending on queue times. You do not need to watch it.

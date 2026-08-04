@@ -28,7 +28,7 @@ Why this is the recommended install: fetching a raw file over HTTPS is a **read-
 
 ### Option B — Copy-paste (zero network access needed)
 
-Open [`SYSTEM_PROMPT.md`](SYSTEM_PROMPT.md) right here on GitHub, copy everything inside the code block, and paste it into your agent. Fully self-contained. The only drawback: your pasted copy doesn't auto-update.
+Open [`SYSTEM_PROMPT.md`](SYSTEM_PROMPT.md) right here on GitHub, copy the entire file (Raw button → select all), and paste it into your agent. Fully self-contained. The only drawback: your pasted copy doesn't auto-update.
 
 ### Option C — Permanent Claude Code skill (power users)
 

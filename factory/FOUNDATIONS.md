@@ -145,3 +145,27 @@ R8 = session loss is never fatal, resume from server-side library state).
 | "Please create scripts for the actors" | Lipsync submit with empty Actor 1 Script |
 | "saved in your Media Library in the category 'My AI Images'." | Save Image succeeded |
 | "Audio and video have been separated" | Separate Audio and Video succeeded |
+
+## 9. Emotional Wave Doctrine (applies to EVERY style — retention engineering)
+
+Flat emotional delivery kills watch time. Every workflow's script step must engineer
+an emotional rollercoaster:
+
+- Palette: **Sad, Happy, Surprised, Angry, Excited, Shocked** (+ Curious/Relieved as
+  connectors). One dominant emotion tag per scene.
+- Contrast rule: no two consecutive scenes share an emotion; polarity (negative <->
+  positive) flips at least 3 times per ~60s.
+- Stakes rule: the hook names what is at risk or to be won — the "why should I care".
+  One open loop runs from hook to final scene, resolved right before the CTA.
+- Ending rule: close on the highest-energy positive beat into the CTA.
+- Three-channel expression (the wave must be VISIBLE, not just verbal):
+  spoken line wording + character face/body in the Image Prompt action clause +
+  voice direction in the Video and Audio Prompt. All three match the scene's tag.
+  Mismatch (shocked words, calm face, flat voice) is the #1 "this is AI content" tell.
+- Style adaptation: the palette is universal, the amplitude is not — a UGC ad swings
+  hard every 5-8s; a cinematic piece swings slower with deeper troughs; a Vox-style
+  explainer rides Curious->Surprised->Shocked->Relieved. Phase 2's emotional-arc
+  measurement of the example videos sets the amplitude for each style.
+- UNVERIFIED, worth probing per style: the Create Lipsync Audio dialog contains a
+  hidden emotion select (`#tts_emotions`, 3 options) — if surfaced, it may reinforce
+  the per-scene emotion; do not rely on it until verified.

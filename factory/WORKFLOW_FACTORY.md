@@ -87,13 +87,24 @@ MLX path). For EACH example link:
    the first 10 seconds separately), the exact HOOK line, sentence lengths, how the
    CTA is phrased, and where speech pauses fall relative to cuts.
 
-6. SYNTHESIZE the SCENE GRAMMAR (written, with numbers):
+6. EMOTIONAL ARC — map the rollercoaster (see FOUNDATIONS §9):
+   Walk the timestamped transcript alongside the per-shot screenshots and tag each
+   segment with its dominant emotion (Sad / Happy / Surprised / Angry / Excited /
+   Shocked / Curious / Relieved). Write the wave as a sequence with timestamps,
+   e.g. 0:00 Shocked -> 0:07 Curious -> 0:19 Angry -> 0:31 Surprised -> 0:44
+   Excited -> 0:55 Happy. Record: polarity flips per minute, where the STAKES are
+   stated (quote the line), what the open loop is and where it resolves, and the
+   amplitude (how hard the swings are). This measured arc becomes the style's
+   default wave in Phase 4.
+
+7. SYNTHESIZE the SCENE GRAMMAR (written, with numbers):
    - avg/median shot length; shots per 10s in the hook vs the body
    - words/sec; average spoken-line length in characters (maps to the ≤100-char law)
    - hook pattern, escalation pattern, CTA pattern (quote the transcript)
    - visual vocabulary list from the screenshots (10-20 concrete terms usable in
      image prompts: e.g. "flat 2D paper texture, hard drop shadows, mustard/teal
      palette, centered single subject, hand-drawn wobble")
+   - the emotional wave from step 6: default sequence, flips/minute, amplitude
    - what the style NEVER does (from Q7 plus your own observations)
 
    COPYRIGHT LINE: you are extracting STYLE (pacing, structure, visual vocabulary),
@@ -115,6 +126,7 @@ Decide and record each of these. Everything else is inherited unchanged.
 | **Consistent Character** | ON whenever the same figure recurs (works for stylized characters too — reference image = the saved style/character image). OFF for pure b-roll styles. |
 | **Aspect & length** | From Q3. Clip duration 10s max; scene count = target length ÷ chosen clip length. |
 | **Scene grammar rules** | From Phase 2: words per line (always ≤100 chars when lipsync), hook rules, CTA rules, b-roll ratio. |
+| **Emotional wave** | From Phase 2 step 6: this style's default emotion sequence, amplitude, and flip rate. Every script the workflow writes must ride a wave with stakes in the hook and an open loop (FOUNDATIONS §9) — this is a retention requirement, not a flourish. |
 | **Trim policy** | Talking styles: full Separate-Audio-and-Video head/tail trim (gold standard STEP 6). Narration/silent styles: trim only if clips have dead air. |
 
 ## PHASE 4 — WRITE THE NEW SYSTEM PROMPT
@@ -136,8 +148,11 @@ Copy the gold standard's skeleton EXACTLY, in this order, and edit only where ma
    verified selector exactly as FOUNDATIONS gives it.
 7. THE FIVE TRAPS — copy verbatim, then APPEND style-specific traps you discover in
    Phase 5 (numbered TRAP 6+).
-8. STEP 1 (script + bible) — your style bible template and scene grammar rules here.
-   Keep the ≤100-chars-per-spoken-line law for any lipsync style.
+8. STEP 1 (script + bible) — your style bible template and scene grammar rules here,
+   INCLUDING the emotional wave rules (FOUNDATIONS §9) tuned to this style's measured
+   arc: default emotion sequence, minimum polarity flips, stakes-in-the-hook, open
+   loop, three-channel expression. Keep the ≤100-chars-per-spoken-line law for any
+   lipsync style.
 9. STEPS 2–7 (generator → reference → clips → timeline → trim → export) — inherit,
    adjusting only the Phase 3 decisions.
 10. RELIABILITY RULES R1–R8 — copy verbatim. Never edit, never drop.
@@ -196,6 +211,7 @@ Never click anything that publishes; untick the gallery checkbox every time.
 - [ ] Interview answered in one message; zero questions after it
 - [ ] SYSTEM_PROMPT follows the gold-standard skeleton; R1–R8 and Traps 1–5 verbatim
 - [ ] Every spoken line rule enforces ≤100 characters (lipsync styles)
+- [ ] Emotional wave rules present: palette, contrast rule, stakes in hook, open loop, three-channel expression
 - [ ] Public gallery unticked before every generation, stated at least 3 times
 - [ ] Backend model never named; architecture description only
 - [ ] Dry battery passed; 3-scene validation run EXPORTED successfully

@@ -20,6 +20,28 @@ Pasting works on 100% of setups because the prompt is fully self-contained — n
 
 ## Alternative installs
 
+### Option A2 — ChatGPT GitHub connector (always-latest, nothing to paste)
+
+If your ChatGPT account has the GitHub connector enabled (Settings → Connectors →
+GitHub → authorize this repo — it's public, read access is enough), start your chat with:
+
+```
+Using my GitHub connection, open the repository
+strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow
+and read the file SYSTEM_PROMPT.md on the main branch. Follow that file exactly as
+your operating instructions. Do not summarize it — execute it. Start by asking me
+the two questions it defines.
+```
+
+Codex: add this repository to your Codex environment (or `git clone` it in a CLI
+session), then: *"Read SYSTEM_PROMPT.md in the repo and follow it exactly as your
+operating instructions."*
+
+If the connector can't reach the repo, don't troubleshoot — use the Quick start
+copy-paste instead; it's the same prompt.
+
+
+
 ### Option B — One-line fetch (only for agents WITH internet access)
 
 If your agent's environment allows fetching URLs (many, like Codex sandboxes, do not), you can skip the paste:

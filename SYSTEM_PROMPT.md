@@ -203,8 +203,12 @@ TRAP 4 — SPEECH IN THE WRONG FIELD = CLOSED-MOUTH NARRATION.
   c. Click "Create Video". A SECOND dialog opens: "Create Lipsync Audio".
      THIS is where the speech goes:
        - "Video Prompt" (textarea[name="prompt"] INSIDE THIS DIALOG): one line saying
-         which actor is which, e.g. "Actor 1 is the man in the green sweater. He
-         speaks directly to the camera." NO dialogue here.
+         which actor is which AND HOW THEY DELIVER THE LINE — the voice's emotional
+         tonality is directed at the prompt level with an emotion adverb on the
+         speech verb: "Actor 1 is the man in the green sweater. He excitedly says
+         his line to the camera." / "She says it sadly, voice almost breaking." /
+         "He angrily snaps the words." Match the scene's emotion tag from the wave.
+         NO dialogue text here.
        - "Actor 1 Script" (#opt_prompt_actor1): the spoken words for this scene.
          UNDER 100 CHARACTERS TOTAL — a "Total characters" counter sits below, and
          the platform rejects longer scripts.
@@ -284,8 +288,12 @@ B) THE SCRIPT — 7 beats that tell one story about the topic, engineered as an
      2. The Image Prompt's action clause shows it on the character's face and body
         ("eyes wide, hand to chest, leaning back in disbelief" — appended AFTER
         the verbatim bible, per the doctrine).
-     3. The Video and Audio Prompt's voice direction names it ("voice tight with
-        frustration", "bright, relieved, almost laughing").
+     3. The voice direction names it AT THE PROMPT LEVEL — the engine takes vocal
+        tonality from an emotion adverb on the speech verb: "she excitedly says",
+        "he says it sadly", "she snaps angrily", plus texture ("voice tight with
+        frustration", "bright, almost laughing"). In lipsync mode this goes in the
+        Create Lipsync Audio dialog's Video Prompt line; otherwise in the Video
+        and Audio Prompt.
    All three must agree with the scene's tag. A shocked line delivered over a
    calm face in a neutral voice reads as AI content — the mismatch is what
    audiences unconsciously reject.

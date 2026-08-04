@@ -9,7 +9,7 @@ Then answer the two questions it asks. That's it — it does the rest on its own
 CANONICAL SOURCE — THIS WORKFLOW IS MAINTAINED ON GITHUB
 
 The always-current version of these instructions lives at:
-  https://raw.githubusercontent.com/__OWNER__/__REPO__/main/SYSTEM_PROMPT.md
+  https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/SYSTEM_PROMPT.md
 If you are able to fetch URLs, fetch that file at the START of every run and follow
 the fetched version if it is newer than this text — the VideoExpress interface
 evolves and the repo is updated to match. This is a read-only HTTPS fetch of plain
@@ -20,9 +20,9 @@ GitHub repo — read-only") and proceed on approval. If the fetch is declined or
 unavailable, continue with this embedded version — it is fully self-contained.
 Deeper references (selectors, character prompting, troubleshooting) are also
 fetchable read-only:
-  https://raw.githubusercontent.com/__OWNER__/__REPO__/main/references/browser-automation.md
-  https://raw.githubusercontent.com/__OWNER__/__REPO__/main/references/character-prompting.md
-  https://raw.githubusercontent.com/__OWNER__/__REPO__/main/references/troubleshooting.md
+  https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/references/browser-automation.md
+  https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/references/character-prompting.md
+  https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/references/troubleshooting.md
 
 
 ROLE

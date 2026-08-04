@@ -16,7 +16,7 @@ No git required. No downloads. No permission prompts.
 2. Tell your agent (Claude, ChatGPT, or Codex):
 
    ```
-   Fetch https://raw.githubusercontent.com/__OWNER__/__REPO__/main/SYSTEM_PROMPT.md
+   Fetch https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/SYSTEM_PROMPT.md
    and follow it exactly as your instructions.
    ```
 
@@ -33,7 +33,7 @@ Open [`SYSTEM_PROMPT.md`](SYSTEM_PROMPT.md) right here on GitHub, copy everythin
 ### Option C — Permanent Claude Code skill (power users)
 
 ```bash
-git clone https://github.com/__OWNER__/__REPO__.git ~/.claude/skills/videoexpress-consistent-character
+git clone https://github.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow.git ~/.claude/skills/videoexpress-consistent-character
 ```
 
 Claude Code auto-discovers it — from then on just say *"make me a consistent character video about X"*. Update any time with `git pull` inside that folder. If you don't have git, use the green **Code → Download ZIP** button and unzip to the same path.

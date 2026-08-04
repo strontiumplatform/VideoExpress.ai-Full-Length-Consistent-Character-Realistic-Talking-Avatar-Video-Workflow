@@ -64,9 +64,10 @@ Opens AFTER clicking Create Video with `talking_video` ticked + image selected.
 - `#opt_prompt_actor1` = Actor 1 Script — THE speech field, ≤100 chars, live
   "Total characters" counter below.
 - "Add Actor 2" reveals `#opt_prompt_actor2` (two-character scenes).
-- VOICE EMOTION IS DIRECTED AT THE PROMPT LEVEL (product-owner confirmed): put an
-  emotion adverb on the speech verb in this dialog's Video Prompt line — "He
-  excitedly says…", "She says it sadly…" — and the engine renders the tonality.
+- VOICE EMOTION IS DIRECTED AT THE PROMPT LEVEL (product-owner confirmed), in free
+  natural language — ANY emotion, ANY phrasing, including physical performance:
+  "He excitedly says…", "She says it in a shocked tone", "While crying and sobbing,
+  she says it in a sad, breaking voice". Direct the delivery like a film director.
   Do NOT hunt for an emotion dropdown; a hidden voice panel exists in the DOM
   (146 languages, emotion, speed, pitch, cloning) but is not the intended path.
 - Submit = "Create" button INSIDE this dialog.
@@ -170,7 +171,8 @@ an emotional rollercoaster:
   explainer rides Curious->Surprised->Shocked->Relieved. Phase 2's emotional-arc
   measurement of the example videos sets the amplitude for each style.
 - Voice tonality mechanism (product-owner confirmed): emotion is directed IN THE
-  PROMPT TEXT — an emotion adverb on the speech verb ("she excitedly says 'YOU ARE
-  AWESOME'", "he says it sadly") in the lipsync dialog's Video Prompt line (or the
-  Video and Audio Prompt for non-lipsync styles). This is channel 3 of the
-  three-channel expression; no dropdown needed.
+  PROMPT TEXT, free-form — any emotion, any phrasing, physical performance included
+  ("she excitedly says 'YOU ARE AWESOME'", "she says it in a shocked tone", "while
+  crying and sobbing she says it in a sad tone") — in the lipsync dialog's Video
+  Prompt line (or the Video and Audio Prompt for non-lipsync styles). This is
+  channel 3 of the three-channel expression; no dropdown needed.

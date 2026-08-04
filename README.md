@@ -10,25 +10,25 @@ Works with **Claude Code, ChatGPT, and Codex** — any AI agent with browser con
 
 ## Quick start (60 seconds, works on every computer)
 
-No git required. No downloads. No permission prompts.
+No git. No downloads. No network access needed by your AI agent. Copy, paste, done.
 
 1. Open **https://app.videoexpress.ai** in the browser your AI agent controls, and **log in**. Leave the tab open.
-2. Tell your agent (Claude, ChatGPT, or Codex):
-
-   ```
-   Fetch https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/SYSTEM_PROMPT.md
-   and follow it exactly as your instructions.
-   ```
-
+2. Open [`SYSTEM_PROMPT.md`](SYSTEM_PROMPT.md) (or the copy page on videoexpress.ai), copy the **entire file**, and paste it into Claude, ChatGPT, or Codex.
 3. Answer the two questions it asks. That's all you do.
 
-Why this is the recommended install: fetching a raw file over HTTPS is a **read-only download of plain text** — no code executes, no credentials are involved, and agents in manual-permission / restricted security modes allow it with at most a single "fetch this URL?" approval. It also means you **always run the latest version** of the workflow — when VideoExpress updates its interface, this repo updates, and your very next run picks it up automatically. Nothing stale ever lives on your machine.
+Pasting works on 100% of setups because the prompt is fully self-contained — nothing to install, nothing for the agent to download. Get it from the VideoExpress workflow page's **Copy Entire Prompt** button (that page always serves the latest version of this file automatically) or straight from this repo.
 
 ## Alternative installs
 
-### Option B — Copy-paste (zero network access needed)
+### Option B — One-line fetch (only for agents WITH internet access)
 
-Open [`SYSTEM_PROMPT.md`](SYSTEM_PROMPT.md) right here on GitHub, copy the entire file (Raw button → select all), and paste it into your agent. Fully self-contained. The only drawback: your pasted copy doesn't auto-update.
+If your agent's environment allows fetching URLs (many, like Codex sandboxes, do not), you can skip the paste:
+
+```
+Fetch https://raw.githubusercontent.com/strontiumplatform/VideoExpress.ai-Full-Length-Consistent-Character-Realistic-Talking-Avatar-Video-Workflow/main/SYSTEM_PROMPT.md and follow it exactly as your instructions.
+```
+
+If the agent says it can't retrieve the file, don't troubleshoot — just use the Quick start paste instead.
 
 ### Option C — Permanent Claude Code skill (power users)
 

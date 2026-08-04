@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Prompt — {{WORKFLOW_TITLE}} | VideoExpress.ai</title>
+<meta name="robots" content="noindex">
+<style>
+:root{color-scheme:dark;--bg:#08090b;--panel:#121417;--panel-2:#191d22;--ink:#f6f3ed;--muted:#aeb5c0;--line:rgba(255,255,255,.12);--gold:#f2b84b;--orange:#f0733f;--blue:#68c7ff;--green:#89e6ae}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top left,rgba(240,115,63,.16),transparent 34rem),radial-gradient(circle at top right,rgba(104,199,255,.14),transparent 30rem),linear-gradient(180deg,#0b0c0f 0%,var(--bg) 55%,#050607 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.page{width:min(980px,calc(100% - 36px));margin:0 auto;padding:34px 0 80px}
+.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+h1{font-size:clamp(26px,4vw,40px);line-height:1.12;margin:0 0 14px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 22px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 26px;padding:0;list-style:none;counter-reset:st}
+.steps li{counter-increment:st;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--muted)}
+.steps li strong{display:block;color:var(--ink);margin-bottom:4px}
+.steps li::before{content:counter(st);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--orange));color:#131313;font-weight:800;font-size:12px;margin-bottom:8px}
+.bar{position:sticky;top:0;z-index:9;display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 0;background:rgba(8,9,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);margin-bottom:18px}
+.button{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 22px;font-weight:700;font-size:15px;text-decoration:none;background:linear-gradient(135deg,var(--gold),var(--orange));color:#131313;transition:transform .15s ease, box-shadow .15s ease}
+.button:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(240,115,63,.28)}
+.button.secondary{background:var(--panel-2);color:var(--ink);border:1px solid var(--line)}
+.hint{font-size:13px;color:var(--muted)}
+pre{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;white-space:pre-wrap;word-wrap:break-word;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#dfe3ea}
+.ok{color:var(--green)}
+footer{margin-top:26px;color:var(--muted);font-size:13px}
+footer a{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">Agent Workflow · Claude · ChatGPT · Codex</p>
+  <h1>{{WORKFLOW_H1}}</h1>
+  <p class="lead">{{WORKFLOW_LEAD}}</p>
+  <ol class="steps">
+    <li><strong>Log in first</strong>Open app.videoexpress.ai in the browser your AI agent controls and log in. Leave the tab open.</li>
+    <li><strong>Copy the prompt</strong>Hit the big button below — the complete, always-latest prompt lands on your clipboard.</li>
+    <li><strong>Paste &amp; answer 2 questions</strong>Paste into Claude, ChatGPT, or Codex. It asks for your character and your topic. That's all you do.</li>
+  </ol>
+  <div class="bar">
+    <button class="button" id="copyAll" type="button">Copy Entire Prompt</button>
+    <a class="button secondary" href="{{DOWNLOAD_MD_PATH}}" download>Download .md</a>
+    <a class="button secondary" href="{{GITHUB_REPO_URL}}" target="_blank" rel="noopener">GitHub</a>
+    <a class="button secondary" href="index.html">&larr; Back to Workflows</a>
+    <span class="hint" id="copyHint">Copy &rarr; paste &rarr; done. Works with every agent, no internet access needed on the agent's side.</span>
+  </div>
+  <p class="hint" id="promptSource" style="margin:0 0 10px">Loading latest version from GitHub&hellip;</p>
+  <pre id="promptBody"></pre>
+  <footer>Works with any AI agent that has browser control. Get VideoExpress at <a href="https://www.videoexpress.ai" target="_blank" rel="noopener">videoexpress.ai</a>.</footer>
+</div>
+<script>
+const FALLBACK_PROMPT = {{FALLBACK_PROMPT_JSON}};
+const RAW_URL = '{{RAW_PROMPT_URL}}';
+let PROMPT = FALLBACK_PROMPT;
+const bodyEl = document.getElementById('promptBody');
+const srcEl = document.getElementById('promptSource');
+bodyEl.textContent = FALLBACK_PROMPT;
+fetch(RAW_URL, {cache: 'no-cache'})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(t => {
+    if (t && t.length > 5000) {
+      PROMPT = t;
+      bodyEl.textContent = t;
+      if (srcEl) srcEl.innerHTML = '&#10003; Live from GitHub — always the latest version';
+    }
+  })
+  .catch(() => { if (srcEl) srcEl.textContent = 'Showing built-in copy (GitHub unreachable) — still fully functional'; });
+const btn=document.getElementById('copyAll'), hint=document.getElementById('copyHint');
+btn.addEventListener('click', async ()=>{
+  try{ await navigator.clipboard.writeText(PROMPT); btn.textContent='Copied ✓'; hint.innerHTML='<span class="ok">Now paste it into Claude, ChatGPT, or Codex.</span>'; }
+  catch(e){ const r=document.createRange(); r.selectNodeContents(document.getElementById('promptBody')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); hint.textContent='Press Cmd/Ctrl+C to copy the selected text.'; }
+  setTimeout(()=>{ btn.textContent='Copy Entire Prompt'; },1600);
+});
+
+</script>
+</body>
+</html>

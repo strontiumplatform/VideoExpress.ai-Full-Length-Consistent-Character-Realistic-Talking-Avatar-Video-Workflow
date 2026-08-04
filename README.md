@@ -65,6 +65,19 @@ Privacy is enforced: the workflow **actively unticks "Share this in the public g
 | [`references/character-prompting.md`](references/character-prompting.md) | The character-bible method that keeps faces consistent |
 | [`references/troubleshooting.md`](references/troubleshooting.md) | Symptom → cause → fix runbook |
 
+## Workflow catalog
+
+| Workflow | Style | Status |
+|---|---|---|
+| [Consistent Character Spokesperson](SYSTEM_PROMPT.md) | Realistic talking avatar, ~60s vertical | ✅ Live-validated end-to-end |
+
+More styles (stickman explainers, 3D animated, UGC ads, cinematic, paper cutout,
+Vox-style) are built with the **[Workflow Factory](factory/WORKFLOW_FACTORY.md)** —
+a meta-workflow that lets a strong AI agent (Codex high tier, Claude Opus/Sonnet)
+create a new style on top of this repo's verified foundation: it interviews you,
+adapts the gold-standard prompt, validates against the live app, and generates the
+distribution page. See `factory/FOUNDATIONS.md` for the verified knowledge base.
+
 ## Reliability
 
 The system prompt embeds seven Reliability Rules derived from live multi-model testing (JavaScript hygiene, two-step picker handling, a fixed click-escalation ladder, verify-after-every-action, and more). **Recommended model tier: Claude Sonnet class or equivalent mid-tier** — verified end-to-end. Smallest-tier models are not recommended for unattended runs.

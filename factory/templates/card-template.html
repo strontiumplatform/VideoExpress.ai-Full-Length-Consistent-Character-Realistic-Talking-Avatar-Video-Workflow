@@ -1,0 +1,31 @@
+<article class="card workflow-feature" id="{{SLUG}}" data-tags="agent {{EXTRA_TAGS}}">
+          <div class="thumb {{PREFIX}}-thumb" aria-label="{{CARD_ARIA}}">
+            <!-- DESIGN A NEW SVG ANIMATION HERE.
+                 Follow the house style: viewBox="0 0 640 360", dark panels (#121417/#191d22),
+                 gold/orange gradient accents (#f2b84b -> #f0733f), blue #68c7ff / green #89e6ae
+                 highlights, muted labels (#aeb5c0, 12-13px). Animate with CSS keyframes using a
+                 UNIQUE class prefix (e.g. .sm- for stickman) appended to assets/css/styles.css,
+                 with a prefers-reduced-motion block. The loop should tell this style's story:
+                 input -> transformation -> assembled video. See the cc-* animation for reference. -->
+            {{CARD_SVG}}
+            <div class="badge-row">
+              <span class="badge">Agent Workflow</span>
+              <span class="badge">Claude · ChatGPT · Codex</span>
+              <span class="badge new">New</span>
+            </div>
+          </div>
+          <div class="content">
+            <h3>{{CARD_TITLE}}</h3>
+            <p>{{CARD_BLURB}}</p>
+            <div class="meta">
+              <span>{{META_1}}</span>
+              <span>{{META_2}}</span>
+              <span>{{META_3}}</span>
+            </div>
+            <div class="card-actions">
+              <a class="button" href="{{SLUG}}.html">Open The System Prompt</a>
+              <button class="button secondary copy" type="button" data-copy-page="{{SLUG}}.html">Copy Link</button>
+              <a class="button secondary" href="{{GITHUB_REPO_URL}}" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>

@@ -210,6 +210,7 @@ Never click anything that publishes; untick the gallery checkbox every time.
 
 - [ ] Interview answered in one message; zero questions after it
 - [ ] SYSTEM_PROMPT follows the gold-standard skeleton; R1–R8 and Traps 1–5 verbatim
+- [ ] Non-Terminal Execution Contract present (FOUNDATIONS §10): two closed terminal states, recoverable-state list routed to R8, final-response prohibition, last-line restatement
 - [ ] Every spoken line rule enforces ≤100 characters (lipsync styles)
 - [ ] Emotional wave rules present: palette, contrast rule, stakes in hook, open loop, three-channel expression
 - [ ] Public gallery unticked before every generation, stated at least 3 times

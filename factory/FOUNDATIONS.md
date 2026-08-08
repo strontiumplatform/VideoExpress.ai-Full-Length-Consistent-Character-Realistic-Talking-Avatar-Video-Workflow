@@ -176,3 +176,44 @@ an emotional rollercoaster:
   crying and sobbing she says it in a sad tone") — in the lipsync dialog's Video
   Prompt line (or the Video and Audio Prompt for non-lipsync styles). This is
   channel 3 of the three-channel expression; no dropdown needed.
+
+## 10. Non-Terminal Execution Contract (mandatory in every workflow — anti-stall doctrine)
+
+Live failure mode (observed on ChatGPT 5.6, Aug 2026): the agent hits a browser
+state-transition boundary (lost tab binding, dead modal, stale selector, queued
+render), decides it is stuck, and ENDS THE TURN with a partial-completion report
+("I generated some scenes; you can continue from here"). The generation capability
+was fine — the loop-recovery decision was wrong. Claude runs survived only because
+its harness happened to preserve state. The fix is prompt-level and mandatory:
+
+- Every SYSTEM_PROMPT contains a **NON-TERMINAL EXECUTION CONTRACT** section
+  defining exactly two terminal states: (A) verified completion — every scene's
+  clip collected, on the timeline in story order, exported, downloaded, and the
+  file watched; (B) a verified hard blocker — login/security, unauthorized
+  payment/upgrade, explicit insufficient-credits message, platform unusable after
+  the resume procedure has run twice, irreversible public action, or a
+  customer-ordered stop. The list is closed; each item needs visible on-screen
+  evidence.
+- Everything else — stale tab, dead modal, failed selector, timed-out click,
+  changed layout, queued/rendering generation, interrupted loop, restarted
+  session — is declared a RECOVERABLE STATE routed to the workflow's single
+  resume procedure (R8 in the gold-standard skeleton). Recovery never asks the
+  customer for direction and never appears in a final message.
+- Final-response prohibition, verbatim in spirit: "I stopped", "you can continue
+  from here", "the remaining step is", "I generated some scenes" and equivalents
+  are illegal final responses without a terminal state evidenced in that message.
+- Pending generation is normal work: poll visibly at the workflow's stated
+  cadence, never refresh a processing page, send one-line progress updates, and
+  an update never ends the task.
+- Locked settings are not recovery levers: no failure or retry changes the model,
+  image type, bible, voice, aspect ratio, or scene list — only the customer's own
+  message, or a visible error naming that setting, may.
+- The prompt's LAST line restates the contract: if the completion evidence does
+  not balance and the export has not passed playback, continue using tools; do
+  not return control to the customer.
+- Reference implementations: the narrative repo's SYSTEM_PROMPT.md Section 0.1
+  (gate/ledger form) and this repo's SYSTEM_PROMPT.md contract section (R-rules
+  form). Adapt the vocabulary to the workflow; never drop a clause.
+- No prompt can overcome a genuine login, credit, outage, or platform execution
+  limit — that is exactly what Terminal State B is for. The contract makes
+  stopping legal ONLY there.
